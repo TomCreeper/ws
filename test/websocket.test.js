@@ -386,6 +386,7 @@ describe('WebSocket', () => {
         ws.on('open', () => {
           ws._socket.on('error', (err) => {
             assert.ok(err instanceof Error);
+            console.log(err);
             assert.ok(err.message.startsWith('write E'));
             ws.on('close', (code, message) => {
               assert.strictEqual(message, '');
